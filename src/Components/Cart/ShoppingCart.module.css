@@ -1,0 +1,33 @@
+.cart-items{
+    list-style: none;
+    max-height: 20rem;
+    overflow:scroll;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.actions{
+    display: flex;
+    justify-content: flex-end;
+}
+.actions button{
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 8px;
+    border-color: 1px solid brown;
+    background-color: transparent;
+}
+.actions button:hover,.actions button:active{
+    background-color: rgb(119, 17, 17);
+    border-color:rgb(119, 17, 17); ;
+}
+.actions .button-alt{
+    color: brown;
+}
+.actions .button{
+    background-color: brown;
+    color: white;
+}

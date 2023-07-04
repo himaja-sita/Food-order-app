@@ -1,0 +1,17 @@
+.mealssummary{
+    background-color: rgb(91, 88, 88);
+    color: white;
+    box-shadow:5px 5px 7px rgb(161, 159, 159);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 45rem;
+    margin: auto;
+    margin-top: -10rem;
+    position: relative;
+}
+.mealssummary h2{
+    margin: 0;
+}
+.mealssummary p{
+    font-style: italic;
+}
