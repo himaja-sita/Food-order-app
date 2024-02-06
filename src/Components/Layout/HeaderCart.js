@@ -22,16 +22,16 @@ useEffect(()=>{
         clearTimeout(timer);
     }
 },[cartitems]);
-const badgeclass=`${classes.button}${btnhighlighted?classes.bump:''}`
+const badgeclass=`${classes.badge}${btnhighlighted?classes.bump:''}`
 
-    return <button className={badgeclass} onClick={props.onshowcart}>
+    return <button className={classes.button} onClick={props.onshowcart}>
         <span className={classes.icon}>
 <CartIcon></CartIcon>
         </span>
         <span>
             Your Cart
         </span>
-        <span className={classes.badge}>
+        <span className={badgeclass}>
             {totalitems}
         </span>
     </button>

@@ -1,0 +1,34 @@
+.formitems{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    
+}
+.formitems input{
+    border-radius: 5px;
+    border-color: solid black 1px;
+    width: 30rem;
+}
+.actions{
+    display: flex;
+    justify-content: flex-end;
+}
+.actions button{
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 8px;
+    border-color: 1px solid brown;
+    background-color: transparent;
+}
+.actions button:hover,.actions button:active{
+    background-color: rgb(119, 17, 17);
+    border-color:rgb(119, 17, 17); ;
+}
+.actions .button-alt{
+    color: brown;
+}
+.actions .button{
+    background-color: brown;
+    color: white;
+}

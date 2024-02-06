@@ -9,8 +9,10 @@ const [isloading,setLoading]=useState(false);
 useEffect(()=>{
   const  fetchmeals=async()=>{
     setLoading(true);
+    console.log('before fetching')
 const response=await fetch('https://food-order-app-4d142-default-rtdb.firebaseio.com/meals.json');
 const data=await response.json();
+console.log('fetched data:',data)
 let loadedmeals=[];
 for (const key in data){
 loadedmeals.push({id:key,name:data[key].name,price:data[key].price,description:data[key].description})

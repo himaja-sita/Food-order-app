@@ -9,10 +9,11 @@ const newitem=action.payload;
 const existingitem=state.items.find(item=>item.id===newitem.id);
 state.changed=true;
 state.totalamount=state.totalamount+newitem.price;
+
 if(existingitem){
-   existingitem.amount++;
-   
+   existingitem.amount++;  
 }
+
 else{
     state.items.push({id:newitem.id,name:newitem.name,price:newitem.price,amount:newitem.amount})
 }
@@ -41,6 +42,11 @@ replacecart(state,action){
     state.items=action.payload.items||[];
     state.totalamount=action.payload.totalamount;
 
+},
+emptycart(state,action){
+state.items=[]
+state.totalamount=0
+state.changed=true
 }
     }
 });

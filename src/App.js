@@ -1,49 +1,20 @@
-
-import { useState,useEffect } from 'react';
 import './App.css';
-import Header from './Components/Layout/Header';
-import Meals from './Components/Layout/Meals/Meals';
-import ShoppingCart from './Components/Cart/Shopping Cart';
-import CartContext from './store/CartContext';
-import Notification from './Components/UI/Notification';
-import { useSelector,useDispatch } from 'react-redux';
-import { sendcartdata,fetchcartdata } from './store/cart-actions';
-
-let isinitial=true;
+import Briyanis from './Components/Layout/Categories/Biryanis';
+import Home from './Components/Layout/Home';
+import Root from './Components/Layout/Root';
+import BreakFast from './Components/Layout/Categories/BreakFast';
+import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 function App() {
-  const [showcart,setshowcart]=useState(false);
-  const dispatch=useDispatch();
-  const cart=useSelector(state=>state.cart);
-  const notification=useSelector(state=>state.cart.notification);
-  
-function showcarthandler(){
-  setshowcart(true);
-}
-function closecart(){
-setshowcart(false);
-}
-useEffect(()=>{
-  dispatch(fetchcartdata())
-},[dispatch])
+  const router=createBrowserRouter([
+    {path:'/',element:<Root></Root>, children:[{index:true,
+    element:<Home></Home>},
+    {path:'Biryanis',
+   element:<Briyanis></Briyanis>},
+   {path:'BreakFast',
+   element:<BreakFast></BreakFast>}]}
+   ])
 
-useEffect(()=>{
-  if(isinitial){
-    isinitial=false;
-    return
-  }
-  if(cart.changed){
-  dispatch(sendcartdata(cart));}
-},[cart,dispatch])
-
-  return (<CartContext>
-    {notification && <Notification status={notification.status} title={notification.title} message={notification.message}></Notification>}
-    <Header onshowcart={showcarthandler}></Header>
-    {showcart && <ShoppingCart onClose={closecart}/>}
-    <main>
-      <Meals></Meals>
-    </main>
-    </CartContext>
-  );
+  return <RouterProvider router={router}></RouterProvider>
 }
 
 export default App;

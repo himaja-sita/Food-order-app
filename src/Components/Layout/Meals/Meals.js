@@ -4,6 +4,7 @@ import AvailableMeals from './AvailableMeals';
 export default function Meals(){
     return <>
     <MealsSummary></MealsSummary>
-    <AvailableMeals></AvailableMeals>
+    {//<AvailableMeals></AvailableMeals>
+    }
     </>
 }

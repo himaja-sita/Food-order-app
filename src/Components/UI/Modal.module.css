@@ -8,7 +8,7 @@
     background-color: rgba(0, 0, 0, 0.75);
 }
 .modaloverlay{
-    position: fixed;
+    position: relative;
     top: 30vh;
     left: 45vh;
     z-index: 30;
@@ -16,4 +16,5 @@
     padding: 1rem;
     border-radius: 10px;
     background-color: white;
+   
 }

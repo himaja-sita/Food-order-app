@@ -1,0 +1,30 @@
+.categories{
+    margin: 1.75rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+
+}
+.categoryitem{
+    cursor: pointer;
+    background-color: white;
+    max-width: 15rem;
+    
+   
+}
+.categoryitem img{
+    width: 14rem;
+    height: 12rem;
+    object-fit: fill;
+}
+.categoryitem h3{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+.categoryitem:hover{
+    box-shadow: 0 5px 8px rgb(124, 123, 123);
+    z-index: 10;
+}

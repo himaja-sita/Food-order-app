@@ -12,6 +12,7 @@ export const fetchcartdata=()=>{
         }
         try{
        const cartdata=await fetchData();
+       console.log('replacing cart..')
        dispatch(cartactions.replacecart(cartdata))
     }
     catch(error){
@@ -26,6 +27,7 @@ export const fetchcartdata=()=>{
 
 export const sendcartdata = (cart) => {
     return async (dispatch) => {
+      console.log('before sending cart data')
       dispatch(
         cartactions.showNotification({
           status: 'pending',
@@ -53,7 +55,7 @@ export const sendcartdata = (cart) => {
   
       try {
         await sendRequest();
-  
+        console.log('sent cart data')
         dispatch(
           cartactions.showNotification({
             status: 'success',
