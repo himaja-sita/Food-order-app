@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { GoogleLogin,googleLogout} from '@react-oauth/google';
 
 function GoogleSignIn() {
-  const [loggedIn,setLoggedIn]=useState(true);
+  const [loggedIn,setLoggedIn]=useState(false);
 
   function handlecallbackresponse(response){
     console.log(response.credential)
@@ -11,6 +11,10 @@ setLoggedIn(true)
 }
 function handleerrorresponse(error){
   console.log(error)
+}
+function handlelogout(){
+  googleLogout()
+  setLoggedIn(false)
 }
 
  /* useEffect(()=>{
@@ -30,7 +34,7 @@ function handleerrorresponse(error){
   type='icon' 
   shape='circle'
   size='large'></GoogleLogin>
-  {loggedIn && <button type='button' onClick={()=>googleLogout()}>logout</button>}
+  {loggedIn && <button type='button' onClick={handlelogout}>logout</button>}
   </div>
 }
 

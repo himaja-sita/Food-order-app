@@ -28,13 +28,13 @@ export const fetchcartdata=()=>{
 export const sendcartdata = (cart) => {
     return async (dispatch) => {
       console.log('before sending cart data')
-      dispatch(
+      /*dispatch(
         cartactions.showNotification({
           status: 'pending',
           title: 'Sending...',
           message: 'Sending cart data!',
         })
-      );
+      )*/
   
       const sendRequest = async () => {
         const response = await fetch(
@@ -56,21 +56,21 @@ export const sendcartdata = (cart) => {
       try {
         await sendRequest();
         console.log('sent cart data')
-        dispatch(
+       /* dispatch(
           cartactions.showNotification({
             status: 'success',
             title: 'Success!',
             message: 'Sent cart data successfully!',
           })
-        );
+        );*/
       } catch (error) {
-        dispatch(
+        /*dispatch(
           cartactions.showNotification({
             status: 'error',
             title: 'Error!',
             message: 'Sending cart data failed!',
           })
-        );
+        );*/
       }
     };
   };
